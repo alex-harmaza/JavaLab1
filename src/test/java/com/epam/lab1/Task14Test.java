@@ -4,9 +4,7 @@ import com.epam.lab1.task12.Book;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by alexh on 22.09.2016.
- */
+
 public class Task14Test extends Assert {
 
     @Test

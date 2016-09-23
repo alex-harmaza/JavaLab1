@@ -11,9 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by alexh on 22.09.2016.
- */
+
 @RunWith(Parameterized.class)
 public class Task6Test extends Assert {
 
@@ -31,10 +29,12 @@ public class Task6Test extends Assert {
         });
     }
 
+
     public Task6Test(double[] input, Table expected) {
         this.input = input;
         this.expected = expected;
     }
+
 
     @Test
     public void execute(){

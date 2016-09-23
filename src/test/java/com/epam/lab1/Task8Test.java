@@ -1,18 +1,11 @@
 package com.epam.lab1;
 
-import com.epam.lab1.task7.ShellSort;
+
 import com.epam.lab1.task8.bl.Sequence;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
-import java.util.Arrays;
-import java.util.Collection;
 
-/**
- * Created by alexh on 22.09.2016.
- */
 public class Task8Test extends Assert {
 
     @Test
@@ -31,4 +24,10 @@ public class Task8Test extends Assert {
         double[] sequence = new double[]{5, 2, 8, 9, 1};
         Sequence.createAscendingSequence(sequence, sequence);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkEmptyInputArray(){
+        Sequence.createAscendingSequence(new double[0], null);
+    }
+
 }

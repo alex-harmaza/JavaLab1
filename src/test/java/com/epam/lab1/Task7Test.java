@@ -9,9 +9,8 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-/**
- * Created by Aliaksandr_Harmaza on 9/21/2016.
- */
+
+
 @RunWith(Parameterized.class)
 public class Task7Test extends Assert {
 
@@ -28,15 +27,17 @@ public class Task7Test extends Assert {
         });
     }
 
+
     public Task7Test(double[] input) {
         this.input = input;
     }
+
 
     @Test
     public void execute(){
         double[] expected = input.clone();
         ShellSort.execute(input);
         Arrays.sort(expected);
-        assertArrayEquals("Incorrect sorting", expected, input, DELTA);
+        assertArrayEquals("Incorrect shell sorting", expected, input, DELTA);
     }
 }

@@ -2,6 +2,7 @@ package com.epam.lab1.task2.bl;
 
 import com.epam.lab1.task2.entity.Point;
 
+
 public class Region {
 
     public static boolean isInclude(Point point){

@@ -10,9 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by alexh on 22.09.2016.
- */
+
 @RunWith(Parameterized.class)
 public class Task4Test extends Assert {
 
@@ -23,21 +21,24 @@ public class Task4Test extends Assert {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                {new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, new int[]{1, 2, 4, 6}}
+                {new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, new int[]{1, 2, 4, 6}},
+                {new int[]{4, 6, 8}, new int[0]}
         });
     }
+
 
     public Task4Test(int[] input, int[] expected) {
         this.input = input;
         this.expected = expected;
     }
 
+
     @Test
     public void execute(){
         List<Integer> actual = Array.getIndexesOfPrimes(input);
-        assertEquals("The size is not the same", expected.length, actual.size());
         assertArrayEquals("The result is not the same", expected, convertToPrimitiveArray(actual));
     }
+
 
     private int[] convertToPrimitiveArray(List<Integer> list){
         int[] result = new int[list.size()];

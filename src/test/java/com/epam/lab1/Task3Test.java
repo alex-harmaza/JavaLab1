@@ -32,11 +32,13 @@ public class Task3Test extends Assert {
         });
     }
 
+
     public Task3Test(Segment inputSegment, double inputStep, Table expected) {
         this.inputSegment = inputSegment;
         this.inputStep = inputStep;
         this.expected = expected;
     }
+
 
     @Test
     public void execute(){

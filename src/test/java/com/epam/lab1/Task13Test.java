@@ -1,15 +1,12 @@
 package com.epam.lab1;
 
-import com.epam.lab1.task12.Book;
 import com.epam.lab1.task13.ProgrammerBook;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.awt.*;
 
-/**
- * Created by alexh on 22.09.2016.
- */
+
 public class Task13Test extends Assert {
 
     @Test

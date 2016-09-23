@@ -5,11 +5,8 @@ import java.util.List;
 
 
 public class Array {
-    public static List<Integer> getIndexesOfPrimes(int[] values){
-        if (values.length == 0){
-            throw new IllegalArgumentException("Empty array 'values'");
-        }
 
+    public static List<Integer> getIndexesOfPrimes(int[] values){
         List<Integer> indexes = new ArrayList<Integer>();
         for (int i = 0; i < values.length; i++){
             boolean isPrime = false;
@@ -31,4 +28,5 @@ public class Array {
         }
         return indexes;
     }
+
 }

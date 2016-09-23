@@ -8,9 +8,7 @@ import org.junit.Test;
 import java.util.*;
 import java.util.List;
 
-/**
- * Created by Aliaksandr_Harmaza on 9/21/2016.
- */
+
 public class Task9Test extends Assert {
 
     @Test(expected = IllegalArgumentException.class)

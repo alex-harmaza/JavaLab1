@@ -5,9 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.awt.Color;
 
-/**
- * Created by alexh on 22.09.2016.
- */
+
 public class Task12Test extends Assert {
 
     @Test

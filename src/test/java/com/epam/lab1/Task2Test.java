@@ -44,10 +44,12 @@ public class Task2Test extends Assert {
         });
     }
 
+
     public Task2Test(Point input, boolean expected) {
         this.input = input;
         this.expected = expected;
     }
+
 
     @Test
     public void execute(){
