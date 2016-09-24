@@ -27,30 +27,33 @@ public class Task12Test extends Assert {
     }
 
     @Test
-    public void checkEqualsWithNullFields(){
-        Book firstBook = new Book(null, null, 0);
-        Book secondBook = new Book(null, null, 0);
-        assertTrue(firstBook.equals(secondBook));
-    }
-
-    @Test
     public void checkNotEqualsWithAllFields(){
-        Book firstBook = new Book("title", null, 0);
-        Book secondBook = new Book("title", "", 0);
+        Book firstBook = new Book("t", "", 12);
+        Book secondBook = new Book("title", "a", 0);
         assertFalse(firstBook.equals(secondBook));
     }
 
     @Test
     public void checkEqualsBooksHashcode(){
-        Book b1 = new Book(null, "", 0);
-        Book b2 = new Book(null, "", 0);
+        Book b1 = new Book("", "", 0);
+        Book b2 = new Book("", "", 0);
         assertTrue(b1.hashCode() == b2.hashCode());
     }
 
     @Test
     public void checkNotEqualsBooksHashcode(){
-        Book b1 = new Book(null, "author", 12);
-        Book b2 = new Book(null, "", 0);
+        Book b1 = new Book("", "author", 12);
+        Book b2 = new Book("", "", 0);
         assertFalse(b1.hashCode() == b2.hashCode());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkByNullTitleField(){
+        new Book(null, "", 0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkByNullAuthorField(){
+        new Book("", null, 0);
     }
 }

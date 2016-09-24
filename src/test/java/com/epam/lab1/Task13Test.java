@@ -27,11 +27,9 @@ public class Task13Test extends Assert {
         assertFalse(book.equals(new Color(0, 0, 0)));
     }
 
-    @Test
-    public void checkEqualsWithNullFields(){
-        ProgrammerBook firstBook = new ProgrammerBook(null, null, null, 0, 0);
-        ProgrammerBook secondBook = new ProgrammerBook(null, null, null, 0, 0);
-        assertTrue(firstBook.equals(secondBook));
+    @Test(expected = IllegalArgumentException.class)
+    public void checkByNullLanguage(){
+        new ProgrammerBook("", "", null, 0, 0);
     }
 
     @Test

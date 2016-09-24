@@ -1,8 +1,6 @@
 package com.epam.lab1.task12;
 
-/**
- * Created by Aliaksandr_Harmaza on 9/21/2016.
- */
+
 public class Book implements Cloneable {
 
     private String title;
@@ -11,12 +9,10 @@ public class Book implements Cloneable {
     private static int edition;
 
 
-    public Book(){}
-
     public Book(String title, String author, int price){
-        this.title = title;
-        this.author = author;
-        this.price = price;
+        setTitle(title);
+        setAuthor(author);
+        setPrice(price);
     }
 
 
@@ -25,6 +21,9 @@ public class Book implements Cloneable {
     }
 
     public void setTitle(String title) {
+        if (title == null){
+            throw new IllegalArgumentException("Title is null");
+        }
         this.title = title;
     }
 
@@ -33,6 +32,9 @@ public class Book implements Cloneable {
     }
 
     public void setAuthor(String author) {
+        if (author == null){
+            throw new IllegalArgumentException("Author is null");
+        }
         this.author = author;
     }
 
@@ -41,6 +43,9 @@ public class Book implements Cloneable {
     }
 
     public void setPrice(int price) {
+        if (price < 0){
+            throw new IllegalArgumentException("Negative price");
+        }
         this.price = price;
     }
 
@@ -99,12 +104,8 @@ public class Book implements Cloneable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("Book");
-        if (title != null){
-            builder.append("\n\ttitle: ").append(title);
-        }
-        if (author != null){
-            builder.append("\n\tauthor: ").append(author);
-        }
+        builder.append("\n\ttitle: ").append(title);
+        builder.append("\n\tauthor: ").append(author);
         builder.append("\n\tprice: ").append(price);
         return builder.toString();
     }

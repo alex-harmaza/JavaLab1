@@ -11,8 +11,8 @@ public class ProgrammerBook extends Book {
 
     public ProgrammerBook(String title, String author, String language, int price, int level){
         super(title, author, price);
-        this.language = language;
-        this.level = level;
+        setLanguage(language);
+        setLevel(level);
     }
 
 
@@ -21,6 +21,9 @@ public class ProgrammerBook extends Book {
     }
 
     public void setLanguage(String language) {
+        if (language == null){
+            throw new IllegalArgumentException("Language is null");
+        }
         this.language = language;
     }
 
@@ -64,20 +67,13 @@ public class ProgrammerBook extends Book {
 
     @Override
     public int hashCode() {
-        int result = super.hashCode() * 17;
-        if (language != null){
-            result = result + language.hashCode();
-        }
-        result = result * 37 + level;
-        return result;
+        return (super.hashCode() * 17 + language.hashCode()) * 37 + level;
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder(super.toString());
-        if (language != null){
-            builder.append("\n\tlanguage: ").append(language);
-        }
+        builder.append("\n\tlanguage: ").append(language);
         builder.append("\n\tlevel: ").append(level);
         return builder.toString();
     }

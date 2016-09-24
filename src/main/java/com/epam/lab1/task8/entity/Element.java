@@ -1,7 +1,7 @@
 package com.epam.lab1.task8.entity;
 
 
-public class Element implements Comparable {
+public class Element implements Comparable<Element> {
 
     private String mark;
     private double value;
@@ -31,12 +31,11 @@ public class Element implements Comparable {
         this.value = value;
     }
 
-    public int compareTo(Object o) {
-        Element that = (Element) o;
-        if (this.value < that.value){
+    public int compareTo(Element o) {
+        if (this.value < o.value){
             return -1;
         }
-        if (this.value > that.value){
+        if (this.value > o.value){
             return 1;
         }
         return 0;
