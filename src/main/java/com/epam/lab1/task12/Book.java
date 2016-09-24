@@ -86,10 +86,7 @@ public class Book implements Cloneable {
 
     @Override
     public int hashCode() {
-        int result = title != null ? title.hashCode() : 0;
-        result = result * 17 + (author != null ? author.hashCode() : 0);
-        result = result * 37 + price;
-        return result;
+        return (title.hashCode() * 17 + author.hashCode()) * 37 + price;
     }
 
     @Override
