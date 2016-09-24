@@ -53,13 +53,10 @@ public class ProgrammerBook extends Book {
 
         ProgrammerBook that = (ProgrammerBook) object;
 
-        if (language != null && !language.equals(that.language)){
+        if (!language.equals(that.language)){
             return false;
         }
         if (level != that.level){
-            return false;
-        }
-        if (language != that.language){
             return false;
         }
         return true;

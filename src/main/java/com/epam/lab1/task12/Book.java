@@ -75,13 +75,10 @@ public class Book implements Cloneable {
         if (price != other.price){
             return false;
         }
-        if (title != null && !title.equals(other.title)){
+        if (!title.equals(other.title)){
             return false;
         }
-        if (author != null && !author.equals(other.author)){
-            return false;
-        }
-        if (title != other.title | author != other.author){
+        if (!author.equals(other.author)){
             return false;
         }
         return true;
