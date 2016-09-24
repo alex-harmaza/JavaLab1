@@ -56,4 +56,9 @@ public class Task12Test extends Assert {
     public void checkByNullAuthorField(){
         new Book("", null, 0);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkByNegativePriceField(){
+        new Book("", "", -1);
+    }
 }
