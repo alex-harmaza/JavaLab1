@@ -2,6 +2,7 @@ package com.epam.lab1.task4;
 
 import com.epam.lab1.task4.bl.Array;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,20 +11,30 @@ public class Task4Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.print("Enter the number of elements: ");
+            int[] values = new int[scanner.nextInt()];
 
-        System.out.print("Enter the number of elements: ");
-        int[] values = new int[scanner.nextInt()];
+            for (int i = 0; i < values.length; i++){
+                System.out.print("value " + i + ": ");
+                values[i] = scanner.nextInt();
+            }
 
-        for (int i = 0; i < values.length; i++){
-            System.out.print("value " + i + ": ");
-            values[i] = scanner.nextInt();
+            List<Integer> indexes = Array.getIndexesOfPrimes(values);
+
+            System.out.println("Found " + indexes.size() + " primes");
+            for (Integer index : indexes){
+                System.out.print("a[" + index + "]");
+            }
         }
-
-        List<Integer> indexes = Array.getIndexesOfPrimes(values);
-
-        System.out.println("Found " + indexes.size() + " primes");
-        for (Integer index : indexes){
-            System.out.print("a[" + index + "]");
+        catch (InputMismatchException e){
+            System.out.println("Error: incorrect value");
+        }
+        catch (NegativeArraySizeException e){
+            System.out.println("Error: negative size");
+        }
+        finally {
+            scanner.close();
         }
     }
 

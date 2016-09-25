@@ -63,10 +63,9 @@ public class Table {
                 if (!"".equals(builder.toString())){
                     builder.append("\n");
                 }
-                for (int i = 0; i < line.length - 1; i++){
+                for (int i = 0; i < line.length; i++){
                     builder.append(line[i]).append("\t");
                 }
-                builder.append(line[line.length - 1]);
             }
         }
         return builder.toString();
